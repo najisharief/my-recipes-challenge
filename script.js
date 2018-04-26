@@ -34,9 +34,29 @@ var RecipeApp = function () {
         recipes.push(recipe);
     };
 
+
+
+
+    // tried to work here
     var createIngredients = function(){
         //add code
-    };
+        $('.add-recipe').on('click', '.input-group', function(){
+
+            var usertext = $(this).next().val();
+            var ingredient = {
+                text: usertext,
+                id = 0
+            }
+        
+            var dataID = $(this).closest('div').data().id;
+                for (i=0; i<recipes.length; i++){
+                    if(dataID == recipes[i].id){
+                     recipes[i].ingredients.push(ingredient);
+            }
+        }
+        
+    });
+    }
 
     var _getIngredients = function(recipe){
         //add code
